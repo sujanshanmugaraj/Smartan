@@ -4,13 +4,14 @@
 > **Roll.No**: 22PD35  
 > **Course**: MSc (Data Science)
 
-## Video Explaination
+## 1) Video Explaination
 
 
 https://drive.google.com/file/d/1QKuc1faEHIAoXciS7i0jKqG-H5OwRjm8/view?usp=sharing
 
+The video and image outputs for all the 4 poses seperately is attached at the bottom of the page 
 
-## Problem Statement Overview
+## 2) Problem Statement Overview
 
 This project addresses the challenge of using human pose estimation frameworks to analyze exercise form and correctness. The solution evaluates body keypoint tracking, applies geometric and rule-based logic for posture analysis, and converts pose data into meaningful real-time feedback for common fitness movements.
 
@@ -22,7 +23,7 @@ This project addresses the challenge of using human pose estimation frameworks t
 - Multi-person detection and individual tracking capabilities
 - Advanced pose estimation using OpenPose integration
 
-## Project Architecture
+## 3) Project Architecture
 
 ### Folder Structure
 
@@ -59,7 +60,7 @@ POSE-ESTIMATION-SAMPLE/
 
 ```
 
-## Exercise Types & Posture Rules
+## 4) Exercise Types & Posture Rules
 
 ### 1. Bicep Curl
 **Primary Rule**: Elbow angle analysis
@@ -93,7 +94,7 @@ POSE-ESTIMATION-SAMPLE/
 - **Rep Counting**: Transitions from closed to open position
 - **Multi-Person**: Synchronized analysis for group exercises
 
-## Logic Behind the Rules
+## 5) Logic Behind the Rules
 
 ### Geometric Analysis Approach
 1. **Angle Calculation**: Uses arctangent mathematics to compute joint angles
@@ -113,7 +114,7 @@ POSE-ESTIMATION-SAMPLE/
 - **Adaptive Logic**: Different thresholds for different exercise phases
 - **Person-Specific**: Individual calibration for multi-person analysis
 
-## Tools & Technologies
+## 6) Tools & Technologies
 
 ### Core Technologies
 - **Python 3.8+**: Primary programming language
@@ -152,7 +153,7 @@ POSE-ESTIMATION-SAMPLE/
 - **Real-time Processing**: Live video analysis pipeline
 - **Multi-Person Tracking**: Individual performance isolation
 
-## Methodology
+## 7) Methodology
 
 ### 1. Pose Detection Pipeline
 ```
@@ -181,7 +182,7 @@ Real-time Analysis → Smoothing → Rep Counting → Performance Metrics → Vi
 Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Graphs + Summary Statistics
 ```
 
-## Component Breakdown
+## 8) Component Breakdown
 
 ### Core Components
 
@@ -217,7 +218,7 @@ Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Grap
 - **Download System**: Access to all generated files
 
 
-## Input & Output Specifications
+## 9) Input & Output Specifications
 
 ### Input Requirements
 - **Video Formats**: MP4, AVI, MOV, MKV, WMV
@@ -245,7 +246,7 @@ Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Grap
    - Group tempo analysis charts
    - Performance ranking and comparison
 
-## Challenges & Solutions
+## 10) Challenges & Solutions
 
 ### 1. Multi-Person Detection Accuracy
 **Challenge**: Distinguishing between multiple people and tracking consistency  
@@ -279,7 +280,7 @@ Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Grap
 - **State Persistence**: Maintaining individual exercise states
 - **Error Recovery**: Handling temporary detection failures
 
-## Performance Metrics
+## 11) Performance Metrics
 
 ### Analysis Accuracy
 - **Single-Person (MediaPipe)**: 85-90% accuracy across test videos
@@ -303,7 +304,7 @@ Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Grap
 | **Setup Complexity** | Easy | Moderate |
 
 
-## Output (Frontend)
+## 12) Output (Frontend)
 
 ![image](https://github.com/user-attachments/assets/dae23e26-9c9e-4a74-ac8e-d4d701eb45ed)
 
@@ -361,7 +362,7 @@ https://drive.google.com/file/d/1eZFgKIZ-W6qdt2jibts_8V-X4cFqI7-_/view?usp=shari
 ![image](https://github.com/user-attachments/assets/6a0b589a-ca3d-4b8b-9212-8ea7d546253a)
 
 
-## 4) Squat
+### 4) Squat
 
 
 https://drive.google.com/file/d/1LMYAMR1h6kd0PoexnI8_58Q2F2OQ1w4V/view?usp=sharing
@@ -380,7 +381,7 @@ https://drive.google.com/file/d/16xNGptt8qNQtq4XUYyD7BMtdOKM7YxKw/view?usp=shari
 
 
 
-## 5) Handling Multiple people
+### 5) Handling Multiple people
 
 
 https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=sharing
@@ -455,7 +456,7 @@ https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=shari
 }
 
 ```
-## Future Enhancements
+## 13) Future Enhancements
 
 ### 1) Fine-Tune Pretrained Models on Pose Classification
 
