@@ -4,6 +4,10 @@
 > **Roll.No**: 22PD35  
 > **Course**: MSc (Data Science)
 
+## Video Explaination
+
+
+
 ## Problem Statement Overview
 
 This project addresses the challenge of using human pose estimation frameworks to analyze exercise form and correctness. The solution evaluates body keypoint tracking, applies geometric and rule-based logic for posture analysis, and converts pose data into meaningful real-time feedback for common fitness movements.
@@ -254,26 +258,6 @@ graph TD
    - Multi-person form accuracy distribution
    - Group tempo analysis charts
    - Performance ranking and comparison
-
-## Multi-Person Features
-
-### Person Detection & Tracking
-- **Automatic Detection**: Identifies multiple people in frame
-- **Individual Tracking**: Maintains separate analysis for each person
-- **Color Coding**: Visual distinction between different individuals
-- **Confidence Scoring**: Filters low-confidence detections
-
-### Comparative Analysis
-- **Side-by-Side Metrics**: Individual performance comparison
-- **Group Statistics**: Aggregate performance metrics
-- **Ranking System**: Performance-based individual ranking
-- **Synchronized Analysis**: Coordinated exercise evaluation
-
-### Enhanced Visualizations
-- **Multi-Person Timeline**: Individual rep progression
-- **Comparative Bar Charts**: Rep count and accuracy comparison
-- **Group Performance Heatmaps**: Form accuracy distribution
-- **Individual Metric Plots**: Separate analysis for each person
 
 ## Challenges & Solutions
 
