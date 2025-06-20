@@ -457,7 +457,7 @@ https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=shari
 ```
 ## Future Enhancements
 
-# 1) Fine-Tune Pretrained Models on Pose Classification
+### 1) Fine-Tune Pretrained Models on Pose Classification
 
 Using a pretrained CNN+LSTM or TimeSformer model.
 
@@ -465,7 +465,7 @@ Fine-tune it on the dataset of exercise sequences.
 
 Label videos into "Correct Rep", "Wrong Elbow Form", "Swinging Reps", etc.
 
-# 2) 3D Pose Estimation / Depth Estimation
+### 2) 3D Pose Estimation / Depth Estimation
 
 Using depth sensors or stereo vision to:
 
@@ -481,7 +481,7 @@ OpenPose with depth
 
 Microsoft Kinect 
 
-# 3) Adding More Exercises (Pushups, Deadlifts, Lunges)
+### 3) Adding More Exercises (Pushups, Deadlifts, Lunges)
 
 Expanding to multi-exercise classifier.
 
