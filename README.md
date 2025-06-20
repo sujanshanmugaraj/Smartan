@@ -332,3 +332,13 @@ graph TD
 | **Model Size** | ~30MB | ~200MB |
 | **Setup Complexity** | Easy | Moderate |
 
+
+## Output (Frontend)
+
+![image](https://github.com/user-attachments/assets/dae23e26-9c9e-4a74-ac8e-d4d701eb45ed)
+
+### Bicep Curl
+
+
+
+
