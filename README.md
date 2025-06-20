@@ -1,8 +1,8 @@
 #  Form Correctness Detection Using Pose Estimation 
 
 > **Name**: Sujan S  
-> **Roll.No**: 22PD35  
-> **Course**: MSc (Data Science)
+> **Roll No**: 22PD35  
+> **Course**: MSc Data Science
 
 ## 1) Video Explaination
 
