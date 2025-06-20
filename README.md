@@ -371,6 +371,40 @@ https://drive.google.com/file/d/12If4iicuaF7TaJb5TwdnrpdOWtpwrpCd/view?usp=drive
 ![image](https://github.com/user-attachments/assets/5f8c83bc-1952-4e34-98af-5077ec0c7754)
 
 
+### 3) Jumping Jacks
+
+https://drive.google.com/file/d/1COzB5uaYnbr5RDNWf77VVrizCge5gEco/view?usp=sharing
+
+https://drive.google.com/file/d/1eZFgKIZ-W6qdt2jibts_8V-X4cFqI7-_/view?usp=sharing
+
+![image](https://github.com/user-attachments/assets/9fbd81b6-f101-49ad-a12a-744f8e20de1d)
+
+![image](https://github.com/user-attachments/assets/edbbe62e-5cba-4ccb-83a1-b21cfc3b8ff9)
+
+![image](https://github.com/user-attachments/assets/c53c56d0-c6de-470c-9ce6-37d86b9a26d3)
+
+![image](https://github.com/user-attachments/assets/542db5aa-3b43-4a2f-afb6-c60142aafeb1)
+
+![image](https://github.com/user-attachments/assets/6a0b589a-ca3d-4b8b-9212-8ea7d546253a)
+
+
+## 4) Squat
+
+https://drive.google.com/file/d/1LMYAMR1h6kd0PoexnI8_58Q2F2OQ1w4V/view?usp=sharing
+
+https://drive.google.com/file/d/16xNGptt8qNQtq4XUYyD7BMtdOKM7YxKw/view?usp=sharing
+
+![image](https://github.com/user-attachments/assets/96c35344-ddd6-449d-ae20-bb9f2f8b98a0)
+
+![image](https://github.com/user-attachments/assets/268ca62e-f6e4-4661-81ab-33011e864119)
+
+![image](https://github.com/user-attachments/assets/5a79047d-1eee-40b0-babb-63eeb4f08845)
+
+![image](https://github.com/user-attachments/assets/00cf70b3-0ffa-4ac7-ad6b-f18327fdd2b3)
+
+![image](https://github.com/user-attachments/assets/43d2bc6d-ff3c-4ca2-83fd-37d2ac1c3061)
+
+
 
 
 
