@@ -1,0 +1,12 @@
+name: "OpenPose"
+input: "image"
+input_dim: 1
+input_dim: 3
+input_dim: 368
+input_dim: 368
+
+layer {
+  name: "dummy"
+  type: "Input"
+  top: "dummy"
+}
