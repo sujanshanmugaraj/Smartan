@@ -1,0 +1,16 @@
+{
+    "exercise_type": "lateral_raise",
+    "total_frames": 156,
+    "correct_frames": 117,
+    "accuracy_percent": 75.0,
+    "total_reps": 2,
+    "average_metric": 101.73,
+    "average_tempo_sec_per_rep": 4.3,
+    "rep_times": [
+        0.67,
+        4.97
+    ],
+    "rep_intervals": [
+        4.3
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "exercise_type": "squat",
+    "total_frames": 147,
+    "correct_frames": 76,
+    "accuracy_percent": 85.0,
+    "total_reps": 2,
+    "average_metric": 143.21,
+    "average_tempo_sec_per_rep": 2.3,
+    "rep_times": [
+        0.73,
+        3.03
+    ],
+    "rep_intervals": [
+        2.3
+    ]
+}

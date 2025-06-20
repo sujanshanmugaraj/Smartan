@@ -1,0 +1,20 @@
+{
+    "exercise_type": "jumping_jack",
+    "total_frames": 208,
+    "correct_frames": 128,
+    "accuracy_percent": 61.54,
+    "total_reps": 4,
+    "average_metric": 0,
+    "average_tempo_sec_per_rep": 2.1,
+    "rep_times": [
+        1.88,
+        3.96,
+        6.21,
+        8.17
+    ],
+    "rep_intervals": [
+        2.08,
+        2.25,
+        1.96
+    ]
+}

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Exercise Form Analyzer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .upload-section {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 60px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .upload-area.dragover {
+            border-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .upload-text {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .upload-subtext {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        #video-input {
+            display: none;
+        }
+
+        .form-group {
+            margin: 30px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .exercise-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .exercise-option {
+            position: relative;
+        }
+
+        .exercise-option input[type="radio"] {
+            display: none;
+        }
+
+        .exercise-option label {
+            display: block;
+            padding: 20px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .exercise-option label:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .exercise-option input[type="radio"]:checked + label {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .exercise-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .analyze-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
+        }
+
+        .analyze-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .progress-container {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .results-section {
+            display: none;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .results-header h2 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .video-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .video-container h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .graphs-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .graphs-section h3 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .graphs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .graph-card {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .graph-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .graph-card h4 {
+            margin-top: 15px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .analysis-log-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .analysis-log-section h3 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .log-content {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #333;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .log-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .log-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .log-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .log-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .log-loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .log-error {
+            text-align: center;
+            color: #dc3545;
+            padding: 20px;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+        }
+
+        .download-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .download-section h3 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .file-preview {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+            display: none;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-icon {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .file-details h4 {
+            margin: 0;
+            color: #333;
+        }
+
+        .file-details p {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .upload-section {
+                padding: 20px;
+            }
+            
+            .exercise-selector {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .graphs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .analysis-log-section {
+                display: none;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .accuracy-indicator {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .accuracy-excellent {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .accuracy-good {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .accuracy-poor {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏋️ AI Exercise Form Analyzer</h1>
+            <p>Upload your workout video and get real-time form analysis with AI-powered pose detection</p>
+        </div>
+
+        <div class="upload-section">
+            <form id="upload-form" enctype="multipart/form-data">
+                <div class="upload-area" id="upload-area">
+                    <span class="upload-icon">📹</span>
+                    <div class="upload-text">Drop your workout video here</div>
+                    <div class="upload-subtext">or click to browse (MP4, AVI, MOV, MKV, WMV - Max 100MB)</div>
+                    <input type="file" id="video-input" name="video" accept=".mp4,.avi,.mov,.mkv,.wmv">
+                </div>
+
+                <div class="file-preview" id="file-preview">
+                    <div class="file-info">
+                        <span class="file-icon">🎥</span>
+                        <div class="file-details">
+                            <h4 id="file-name"></h4>
+                            <p id="file-size"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Exercise Type:</label>
+                    <div class="exercise-selector">
+                        <div class="exercise-option">
+                            <input type="radio" id="bicep_curl" name="exercise_type" value="bicep_curl">
+                            <label for="bicep_curl">
+                                <span class="exercise-emoji">💪</span>
+                                Bicep Curl
+                            </label>
+                        </div>
+                        <div class="exercise-option">
+                            <input type="radio" id="lateral_raise" name="exercise_type" value="lateral_raise">
+                            <label for="lateral_raise">
+                                <span class="exercise-emoji">🤸</span>
+                                Lateral Raise
+                            </label>
+                        </div>
+                        <div class="exercise-option">
+                            <input type="radio" id="squat" name="exercise_type" value="squat">
+                            <label for="squat">
+                                <span class="exercise-emoji">🏃</span>
+                                Squat
+                            </label>
+                        </div>
+                        <div class="exercise-option">
+                            <input type="radio" id="jumping_jack" name="exercise_type" value="jumping_jack">
+                            <label for="jumping_jack">
+                                <span class="exercise-emoji">🤾</span>
+                                Jumping Jack
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="analyze-btn" id="analyze-btn">
+                    🔍 Analyze Exercise Form
+                </button>
+
+                <div class="progress-container" id="progress-container">
+                    <div class="loading-spinner"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">Processing your video...</div>
+                </div>
+
+                <div class="error-message" id="error-message"></div>
+                <div class="success-message" id="success-message"></div>
+            </form>
+        </div>
+
+        <div class="results-section" id="results-section">
+            <div class="results-header">
+                <h2>📊 Analysis Results</h2>
+                <p>Here's your comprehensive exercise form analysis</p>
+            </div>
+
+            <div class="results-grid" id="results-grid">
+                <!-- Results will be populated here -->
+            </div>
+
+            <div class="video-container" id="video-container">
+                <h3>📹 Original Video</h3>
+                <video id="result-video" controls>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="graphs-section" id="graphs-section">
+                <h3>📈 Performance Analytics</h3>
+                <div class="graphs-grid" id="graphs-grid">
+                    <!-- Graphs will be populated here -->
+                </div>
+            </div>
+
+            <div class="analysis-log-section" id="analysis-log-section">
+                <h3>📋 Analysis Log Details</h3>
+                <div class="log-content" id="log-content">
+                    <!-- Log content will be populated here -->
+                </div>
+            </div>
+
+            <div class="download-section" id="download-section">
+                <h3>💾 Download Results</h3>
+                <div class="download-buttons" id="download-buttons">
+                    <!-- Download buttons will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentSessionId = null;
+        
+        // DOM elements
+        const uploadArea = document.getElementById('upload-area');
+        const videoInput = document.getElementById('video-input');
+        const uploadForm = document.getElementById('upload-form');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const progressContainer = document.getElementById('progress-container');
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        const errorMessage = document.getElementById('error-message');
+        const successMessage = document.getElementById('success-message');
+        const filePreview = document.getElementById('file-preview');
+        const resultsSection = document.getElementById('results-section');
+
+        // File upload handling
+        uploadArea.addEventListener('click', () => videoInput.click());
+        uploadArea.addEventListener('dragover', handleDragOver);
+        uploadArea.addEventListener('dragleave', handleDragLeave);
+        uploadArea.addEventListener('drop', handleDrop);
+        videoInput.addEventListener('change', handleFileSelect);
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                videoInput.files = files;
+                handleFileSelect();
+            }
+        }
+
+        function handleFileSelect() {
+            const file = videoInput.files[0];
+            if (file) {
+                document.getElementById('file-name').textContent = file.name;
+                document.getElementById('file-size').textContent = formatFileSize(file.size);
+                filePreview.style.display = 'block';
+                analyzeBtn.disabled = false;
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Form submission
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const file = videoInput.files[0];
+            const exerciseType = document.querySelector('input[name="exercise_type"]:checked');
+            
+            if (!file) {
+                showError('Please select a video file');
+                return;
+            }
+            
+            if (!exerciseType) {
+                showError('Please select an exercise type');
+                return;
+            }
+            
+            formData.append('video', file);
+            formData.append('exercise_type', exerciseType.value);
+            
+            try {
+                analyzeBtn.disabled = true;
+                showProgress();
+                hideMessages();
+                
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentSessionId = result.session_id;
+                    showSuccess('Video analyzed successfully!');
+                    displayResults(result.results);
+                } else {
+                    showError(result.error || 'Analysis failed');
+                }
+                
+            } catch (error) {
+                showError('Network error: ' + error.message);
+            } finally {
+                hideProgress();
+                analyzeBtn.disabled = false;
+            }
+        });
+
+        function showProgress() {
+            progressContainer.style.display = 'block';
+            // Simulate progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 90) {
+                    clearInterval(interval);
+                    progress = 90;
+                }
+                progressFill.style.width = progress + '%';
+                progressText.textContent = `Processing your video... ${Math.round(progress)}%`;
+            }, 1000);
+        }
+
+        function hideProgress() {
+            progressContainer.style.display = 'none';
+            progressFill.style.width = '0%';
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            successMessage.style.display = 'none';
+        }
+
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+        }
+
+        function hideMessages() {
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+        }
+
+        function displayResults(results) {
+            // Show results section
+            resultsSection.style.display = 'block';
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Populate stats
+            const resultsGrid = document.getElementById('results-grid');
+            resultsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${results.total_reps}</div>
+                    <div class="stat-label">Total Repetitions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${results.accuracy_percent}%</div>
+                    <div class="stat-label">Form Accuracy</div>
+                    <div class="accuracy-indicator ${getAccuracyClass(results.accuracy_percent)}">
+                        ${getAccuracyText(results.accuracy_percent)}
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${results.average_tempo_sec_per_rep}s</div>
+                    <div class="stat-label">Average Tempo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${results.total_frames}</div>
+                    <div class="stat-label">Frames Analyzed</div>
+                </div>
+            `;
+            
+            // Show only original video
+            const videoContainer = document.getElementById('video-container');
+            if (results.original_video) {
+                videoContainer.innerHTML = `
+                    <h3>📹 Original Video</h3>
+                    <video controls style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <source src="${results.original_video}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                `;
+                videoContainer.style.display = 'block';
+            }
+            
+            // Show graphs
+            if (results.graph_files && results.graph_files.length > 0) {
+                const graphsGrid = document.getElementById('graphs-grid');
+                graphsGrid.innerHTML = results.graph_files.map(graph => `
+                    <div class="graph-card">
+                        <img src="${graph.path}" alt="${graph.name}">
+                        <h4>${graph.name}</h4>
+                    </div>
+                `).join('');
+                document.getElementById('graphs-section').style.display = 'block';
+            }
+            
+            // Show download buttons - exclude original video download
+            const downloadButtons = document.getElementById('download-buttons');
+            let downloadHTML = '';
+            
+            if (results.output_video) {
+                downloadHTML += `
+                    <a href="${results.output_video}" class="download-btn" download>
+                        🎥 Download Analyzed Video
+                    </a>
+                `;
+            }
+            
+            if (results.log_file) {
+                downloadHTML += `
+                    <a href="${results.log_file}" class="download-btn" download>
+                        📄 Download Analysis Log
+                    </a>
+                `;
+            }
+            
+            downloadButtons.innerHTML = downloadHTML;
+            document.getElementById('download-section').style.display = 'block';
+            
+            // Display log content
+            if (results.log_file) {
+                displayLogContent(results.log_file);
+            }
+        }
+
+        async function displayLogContent(logUrl) {
+            const logSection = document.getElementById('analysis-log-section');
+            const logContent = document.getElementById('log-content');
+            
+            // Show the log section
+            logSection.style.display = 'block';
+            
+            // Show loading state
+            logContent.innerHTML = '<div class="log-loading">Loading analysis log...</div>';
+            
+            try {
+                const response = await fetch(logUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const logText = await response.text();
+                
+                // Display the log content
+                logContent.innerHTML = logText || 'No log content available.';
+                
+            } catch (error) {
+                console.error('Error fetching log content:', error);
+                logContent.innerHTML = '<div class="log-error">Error loading log content. Please try downloading the log file instead.</div>';
+            }
+        }
+
+        function getAccuracyClass(accuracy) {
+            if (accuracy >= 80) return 'accuracy-excellent';
+            if (accuracy >= 60) return 'accuracy-good';
+            return 'accuracy-poor';
+        }
+
+        function getAccuracyText(accuracy) {
+            if (accuracy >= 60) return 'Good';
+            return 'Needs Improvement';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "exercise_type": "bicep_curl",
+    "total_frames": 151,
+    "correct_frames": 101,
+    "accuracy_percent": 66.89,
+    "total_reps": 3,
+    "average_metric": 69.51,
+    "average_tempo_sec_per_rep": 1.14,
+    "rep_times": [
+        0.7,
+        2.33,
+        2.97
+    ],
+    "rep_intervals": [
+        1.63,
+        0.64
+    ]
+}

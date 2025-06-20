@@ -1,0 +1,152 @@
+Frame,Timestamp,Metric,Value,Feedback,Reps
+0,0.0,Elbow Angle,103.98303526081867,Correct Form,0
+1,0.03,Elbow Angle,108.49708940240097,Correct Form,0
+2,0.07,Elbow Angle,110.25240657962212,Correct Form,0
+3,0.1,Elbow Angle,112.6507507493599,Correct Form,0
+4,0.13,Elbow Angle,112.52373498812703,Correct Form,0
+5,0.17,Elbow Angle,114.45258363952014,Correct Form,0
+6,0.2,Elbow Angle,115.81286225691059,Correct Form,0
+7,0.23,Elbow Angle,116.50421120522383,Correct Form,0
+8,0.27,Elbow Angle,116.64091279795691,Correct Form,0
+9,0.3,Elbow Angle,115.68396729394063,Correct Form,0
+10,0.33,Elbow Angle,112.03222217088943,Correct Form,0
+11,0.37,Elbow Angle,105.06288913088889,Correct Form,0
+12,0.4,Elbow Angle,99.00116041546171,Correct Form,0
+13,0.43,Elbow Angle,91.26095385493068,Correct Form,0
+14,0.47,Elbow Angle,91.37174393633727,Correct Form,0
+15,0.5,Elbow Angle,86.50840543499272,Correct Form,0
+16,0.53,Elbow Angle,85.02080286127091,Correct Form,0
+17,0.57,Elbow Angle,79.08758139549768,Correct Form,0
+18,0.6,Elbow Angle,75.54349856448164,Correct Form,0
+19,0.63,Elbow Angle,70.99796848917731,Correct Form,0
+20,0.67,Elbow Angle,64.21620736277156,Correct Form,0
+21,0.7,Elbow Angle,58.409112314653136,Correct Form,1
+22,0.73,Elbow Angle,54.408713104146834,Correct Form,1
+23,0.77,Elbow Angle,50.89393616058832,Correct Form,1
+24,0.8,Elbow Angle,48.42123360131745,Correct Form,1
+25,0.83,Elbow Angle,45.19335600106595,Correct Form,1
+26,0.87,Elbow Angle,43.33847321398662,Correct Form,1
+27,0.9,Elbow Angle,41.82192090936499,Correct Form,1
+28,0.93,Elbow Angle,40.76935910952698,Correct Form,1
+29,0.97,Elbow Angle,39.7466899777871,Correct Form,1
+30,1.0,Elbow Angle,38.880557338064285,Correct Form,1
+31,1.03,Elbow Angle,38.75787679831822,Correct Form,1
+32,1.07,Elbow Angle,39.12833587970045,Correct Form,1
+33,1.1,Elbow Angle,39.738051816182406,Correct Form,1
+34,1.13,Elbow Angle,40.27468538850855,Correct Form,1
+35,1.17,Elbow Angle,41.81482285548051,Correct Form,1
+36,1.2,Elbow Angle,44.58755378588962,Correct Form,1
+37,1.23,Elbow Angle,47.710447429196336,Correct Form,1
+38,1.27,Elbow Angle,50.70161675610691,Correct Form,1
+39,1.3,Elbow Angle,53.86937250553073,Correct Form,1
+40,1.33,Elbow Angle,59.41534050514647,Correct Form,1
+41,1.37,Elbow Angle,67.17920205481089,Correct Form,1
+42,1.4,Elbow Angle,73.33560501465703,Correct Form,1
+43,1.43,Elbow Angle,80.63295448955357,Correct Form,1
+44,1.47,Elbow Angle,88.29303544046331,Correct Form,1
+45,1.5,Elbow Angle,102.67974688242187,Correct Form,1
+46,1.53,Elbow Angle,122.1171728956358,Correct Form,1
+47,1.57,Elbow Angle,137.64173617135071,Correct Form,1
+48,1.6,Elbow Angle,148.5911914992813,Correct Form,1
+49,1.63,Elbow Angle,153.1285743911099,Correct Form,1
+50,1.67,Elbow Angle,159.88061555538278,Correct Form,1
+51,1.7,Elbow Angle,165.87132986599428,Correct Form,1
+52,1.73,Elbow Angle,169.26709177049776,Correct Form,1
+53,1.77,Elbow Angle,171.4037555024743,Correct Form,1
+54,1.8,Elbow Angle,172.29989572056618,Correct Form,1
+55,1.83,Elbow Angle,173.2724870800167,Correct Form,1
+56,1.87,Elbow Angle,173.51918952164556,Correct Form,1
+57,1.9,Elbow Angle,173.6231750432,Correct Form,1
+58,1.93,Elbow Angle,173.5899103050634,Correct Form,1
+59,1.97,Elbow Angle,174.36418343556113,Correct Form,1
+60,2.0,Elbow Angle,174.62185427693066,Correct Form,1
+61,2.03,Elbow Angle,174.43508490917114,Correct Form,1
+62,2.07,Elbow Angle,173.20907754603556,Correct Form,1
+63,2.1,Elbow Angle,171.11589644725026,Correct Form,1
+64,2.13,Elbow Angle,162.56594436765764,Correct Form,1
+65,2.17,Elbow Angle,143.0462520589125,Correct Form,1
+66,2.2,Elbow Angle,110.80469633014297,Correct Form,1
+67,2.23,Elbow Angle,95.30489190738221,Correct Form,1
+68,2.27,Elbow Angle,83.54593465283862,Correct Form,1
+69,2.3,Elbow Angle,81.97483878335855,Correct Form,1
+70,2.33,Elbow Angle,54.059771109292,Too Curled Form,2
+71,2.37,Elbow Angle,29.69638277117041,Too Curled Form,2
+72,2.4,Elbow Angle,8.528774159254896,Too Curled Form,2
+73,2.43,Elbow Angle,4.698954826770354,Too Curled Form,2
+74,2.47,Elbow Angle,4.463057135849174,Too Curled Form,2
+75,2.5,Elbow Angle,28.987615987146242,Correct Form,2
+76,2.53,Elbow Angle,79.96176320863331,Correct Form,2
+77,2.57,Elbow Angle,130.50987326411965,Correct Form,2
+78,2.6,Elbow Angle,160.76549977216885,Correct Form,2
+79,2.63,Elbow Angle,163.93256258032696,Correct Form,2
+80,2.67,Elbow Angle,168.70331183494952,Correct Form,2
+81,2.7,Elbow Angle,170.1514237224845,Correct Form,2
+82,2.73,Elbow Angle,171.42023653161743,Correct Form,2
+83,2.77,Elbow Angle,173.17219317656944,Correct Form,2
+84,2.8,Elbow Angle,170.52519334041244,Correct Form,2
+85,2.83,Elbow Angle,171.17324863443062,Correct Form,2
+86,2.87,Elbow Angle,171.5140076039689,Correct Form,2
+87,2.9,Elbow Angle,119.83571718982434,Too Curled Form,2
+88,2.93,Elbow Angle,65.30972028837618,Too Curled Form,2
+89,2.97,Elbow Angle,8.680054547958276,Too Curled Form,3
+90,3.0,Elbow Angle,8.391061446522377,Too Curled Form,3
+91,3.03,Elbow Angle,4.97183617571085,Too Curled Form,3
+92,3.07,Elbow Angle,3.0828755329850357,Too Curled Form,3
+93,3.1,Elbow Angle,1.20162814873915,Too Curled Form,3
+94,3.13,Elbow Angle,3.2377811170168997,Too Curled Form,3
+95,3.17,Elbow Angle,7.787340939414463,Too Curled Form,3
+96,3.2,Elbow Angle,24.640636940279094,Correct Form,3
+97,3.23,Elbow Angle,41.393146704608846,Correct Form,3
+98,3.27,Elbow Angle,50.194481591049794,Correct Form,3
+99,3.3,Elbow Angle,48.40285525550252,Correct Form,3
+100,3.33,Elbow Angle,46.57804879073158,Correct Form,3
+101,3.37,Elbow Angle,45.10974942134402,Correct Form,3
+102,3.4,Elbow Angle,40.09026498386256,Correct Form,3
+103,3.43,Elbow Angle,32.068905776325025,Too Curled Form,3
+104,3.47,Elbow Angle,34.709133824920784,Correct Form,3
+105,3.5,Elbow Angle,42.07213609359161,Correct Form,3
+106,3.53,Elbow Angle,47.64495891335036,Correct Form,3
+107,3.57,Elbow Angle,45.807882281709276,Correct Form,3
+108,3.6,Elbow Angle,40.434376561161635,Correct Form,3
+109,3.63,Elbow Angle,51.40287433553766,Correct Form,3
+110,3.67,Elbow Angle,51.100398805122445,Correct Form,3
+111,3.7,Elbow Angle,54.451332219421396,Correct Form,3
+112,3.73,Elbow Angle,37.17012307988506,Too Curled Form,3
+113,3.77,Elbow Angle,38.64168052123228,Correct Form,3
+114,3.8,Elbow Angle,35.62928529521426,Correct Form,3
+115,3.83,Elbow Angle,28.558112479295875,Too Curled Form,3
+116,3.87,Elbow Angle,15.526710519150937,Too Curled Form,3
+117,3.9,Elbow Angle,2.9794203550761558,Too Curled Form,3
+118,3.93,Elbow Angle,2.127877893676246,Too Curled Form,3
+119,3.97,Elbow Angle,0.9444258517242918,Too Curled Form,3
+120,4.0,Elbow Angle,1.2941732767365977,Too Curled Form,3
+121,4.03,Elbow Angle,3.131777458328972,Too Curled Form,3
+122,4.07,Elbow Angle,6.378950210316983,Too Curled Form,3
+123,4.1,Elbow Angle,12.994162294360587,Too Curled Form,3
+124,4.13,Elbow Angle,17.719195107942713,Too Curled Form,3
+125,4.17,Elbow Angle,18.79632393788977,Too Curled Form,3
+126,4.2,Elbow Angle,18.864131571329924,Too Curled Form,3
+127,4.23,Elbow Angle,21.553810735855524,Too Curled Form,3
+128,4.27,Elbow Angle,26.07486533487516,Too Curled Form,3
+129,4.3,Elbow Angle,23.079824122371974,Too Curled Form,3
+130,4.33,Elbow Angle,16.624616782251817,Too Curled Form,3
+131,4.37,Elbow Angle,10.96128498483692,Too Curled Form,3
+132,4.4,Elbow Angle,9.477181496114795,Too Curled Form,3
+133,4.43,Elbow Angle,10.143870301497236,Too Curled Form,3
+134,4.47,Elbow Angle,10.176140790505293,Too Curled Form,3
+135,4.5,Elbow Angle,17.17641850083243,Correct Form,3
+136,4.53,Elbow Angle,26.148651960769964,Correct Form,3
+137,4.57,Elbow Angle,32.80787508950538,Too Curled Form,3
+138,4.6,Elbow Angle,29.153096016207087,Too Curled Form,3
+139,4.63,Elbow Angle,17.12518319233821,Too Curled Form,3
+140,4.67,Elbow Angle,8.661917044543983,Too Curled Form,3
+141,4.7,Elbow Angle,3.8783134336385476,Too Curled Form,3
+142,4.73,Elbow Angle,5.254800933301777,Too Curled Form,3
+143,4.77,Elbow Angle,10.007616313467855,Too Curled Form,3
+144,4.8,Elbow Angle,16.71872557385035,Too Curled Form,3
+145,4.83,Elbow Angle,21.369599347061243,Too Curled Form,3
+146,4.87,Elbow Angle,22.516447723675693,Too Curled Form,3
+147,4.9,Elbow Angle,21.276936280452134,Too Curled Form,3
+148,4.93,Elbow Angle,21.549820227883487,Too Curled Form,3
+149,4.97,Elbow Angle,20.441037187776065,Too Curled Form,3
+150,5.0,Elbow Angle,15.620330603778001,Too Curled Form,3
