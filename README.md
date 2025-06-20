@@ -307,6 +307,7 @@ Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Grap
 
 ### 1) Bicep Curl
 
+
 https://drive.google.com/file/d/1n-uPZQ_zg9Z0eaFrgACela29OieV0L-U/view?usp=sharing
 
 https://drive.google.com/file/d/1Lzhd3NUf0kfzrR5pwx7vgvnnnjzlBYSE/view?usp=sharing
@@ -323,6 +324,7 @@ https://drive.google.com/file/d/1Lzhd3NUf0kfzrR5pwx7vgvnnnjzlBYSE/view?usp=shari
 
 
 ### 2) Lateral Raise
+
 
 https://drive.google.com/file/d/1jEcMRWTYSGWAIjMKxgrgBl85xi7hwYlx/view?usp=drive_link
 
@@ -341,6 +343,7 @@ https://drive.google.com/file/d/12If4iicuaF7TaJb5TwdnrpdOWtpwrpCd/view?usp=drive
 
 ### 3) Jumping Jacks
 
+
 https://drive.google.com/file/d/1COzB5uaYnbr5RDNWf77VVrizCge5gEco/view?usp=sharing
 
 https://drive.google.com/file/d/1eZFgKIZ-W6qdt2jibts_8V-X4cFqI7-_/view?usp=sharing
@@ -357,6 +360,7 @@ https://drive.google.com/file/d/1eZFgKIZ-W6qdt2jibts_8V-X4cFqI7-_/view?usp=shari
 
 
 ## 4) Squat
+
 
 https://drive.google.com/file/d/1LMYAMR1h6kd0PoexnI8_58Q2F2OQ1w4V/view?usp=sharing
 
@@ -376,6 +380,7 @@ https://drive.google.com/file/d/16xNGptt8qNQtq4XUYyD7BMtdOKM7YxKw/view?usp=shari
 
 ## 5) Handling Multiple people
 
+
 https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=sharing
 
 ![image](https://github.com/user-attachments/assets/47d59881-f91b-4127-98d6-9b57bd53e4bb)
@@ -391,7 +396,7 @@ https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=shari
 
 
 
-
+```
 
 {
     "persons": {
@@ -447,7 +452,7 @@ https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=shari
     "total_frames": 315
 }
 
-
+```
 
 
 
