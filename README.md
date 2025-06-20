@@ -337,7 +337,40 @@ graph TD
 
 ![image](https://github.com/user-attachments/assets/dae23e26-9c9e-4a74-ac8e-d4d701eb45ed)
 
-### Bicep Curl
+### 1) Bicep Curl
+
+https://drive.google.com/file/d/1n-uPZQ_zg9Z0eaFrgACela29OieV0L-U/view?usp=sharing
+
+https://drive.google.com/file/d/1Lzhd3NUf0kfzrR5pwx7vgvnnnjzlBYSE/view?usp=sharing
+
+![image](https://github.com/user-attachments/assets/1b3396f0-60b0-4e6c-a7b2-2438752d4135)
+
+![image](https://github.com/user-attachments/assets/2b6c4f2a-a861-481b-8ad9-d5676e24f352)
+
+![image](https://github.com/user-attachments/assets/40d3b957-0456-4f52-8328-7fc6c8100b28)
+
+![image](https://github.com/user-attachments/assets/aa9c025d-36df-4d52-b259-ac3bdc1d0cc4)
+
+![image](https://github.com/user-attachments/assets/8ad4578f-7da5-40a3-9d34-ca04e1e8694b)
+
+
+### 2) Lateral Raise
+
+https://drive.google.com/file/d/1jEcMRWTYSGWAIjMKxgrgBl85xi7hwYlx/view?usp=drive_link
+
+https://drive.google.com/file/d/12If4iicuaF7TaJb5TwdnrpdOWtpwrpCd/view?usp=drive_link
+
+![image](https://github.com/user-attachments/assets/8f91c1ae-f698-45a1-b8ad-57f75b355015)
+
+![image](https://github.com/user-attachments/assets/91b54b6a-9fb7-4be8-8b72-9f6375c051c7)
+
+![image](https://github.com/user-attachments/assets/3b582bc5-6ce4-423d-9393-2b96960b3233)
+
+![image](https://github.com/user-attachments/assets/3eddb7d7-b5c3-48ec-b465-d484cdd6753e)
+
+![image](https://github.com/user-attachments/assets/5f8c83bc-1952-4e34-98af-5077ec0c7754)
+
+
 
 
 
