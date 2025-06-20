@@ -7,6 +7,8 @@
 ## Video Explaination
 
 
+https://drive.google.com/file/d/1QKuc1faEHIAoXciS7i0jKqG-H5OwRjm8/view?usp=sharing
+
 
 ## Problem Statement Overview
 
@@ -453,6 +455,40 @@ https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=shari
 }
 
 ```
+## Future Enhancements
+
+# 1) Fine-Tune Pretrained Models on Pose Classification
+
+Using a pretrained CNN+LSTM or TimeSformer model.
+
+Fine-tune it on the dataset of exercise sequences.
+
+Label videos into "Correct Rep", "Wrong Elbow Form", "Swinging Reps", etc.
+
+# 2) 3D Pose Estimation / Depth Estimation
+
+Using depth sensors or stereo vision to:
+
+Improve accuracy of angle calculations.
+
+Reduce errors from camera tilt.
+
+Libraries:
+
+MediaPipe Holistic
+
+OpenPose with depth
+
+Microsoft Kinect 
+
+# 3) Adding More Exercises (Pushups, Deadlifts, Lunges)
+
+Expanding to multi-exercise classifier.
+
+Using CNN or ensemble models to auto-identify which exercise is being done.
+
+Support real-time feedback + logging per user session.
+
 
 
 
