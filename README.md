@@ -214,22 +214,6 @@ Processed Video + Multi-Person Overlays + Individual CSV Logs + Comparative Grap
 - **Results Display**: Interactive performance dashboard with comparative analysis
 - **Download System**: Access to all generated files
 
-### Data Flow Architecture
-
-```mermaid
-graph TD
-    A[Video Upload] --> B[Analysis Mode Selection]
-    B --> C{Single or Multi-Person?}
-    C -->|Single| D[MediaPipe Detection]
-    C -->|Multi| E[OpenPose Detection]
-    D --> F[Single Person Analysis]
-    E --> G[Multi-Person Analysis]
-    F --> H[Individual Metrics]
-    G --> I[Comparative Metrics]
-    H --> J[Visualization Generation]
-    I --> J
-    J --> K[Results Dashboard]
-```
 
 ## Input & Output Specifications
 
@@ -387,6 +371,81 @@ https://drive.google.com/file/d/16xNGptt8qNQtq4XUYyD7BMtdOKM7YxKw/view?usp=shari
 ![image](https://github.com/user-attachments/assets/00cf70b3-0ffa-4ac7-ad6b-f18327fdd2b3)
 
 ![image](https://github.com/user-attachments/assets/43d2bc6d-ff3c-4ca2-83fd-37d2ac1c3061)
+
+
+
+## 5) Handling Multiple people
+
+https://drive.google.com/file/d/1TPnvi2YXgvfQFOpsV9cR-UNy93_VRBMx/view?usp=sharing
+
+![image](https://github.com/user-attachments/assets/47d59881-f91b-4127-98d6-9b57bd53e4bb)
+
+![form_accuracy_pie](https://github.com/user-attachments/assets/c5f47627-482d-495b-ae6d-8103bc673628)
+
+![distance_over_time](https://github.com/user-attachments/assets/f134f50e-fbef-4ef9-aaf8-4ee8eb29b1d7)
+
+![image](https://github.com/user-attachments/assets/da40de3c-9b50-4100-bc75-717a66595665)
+
+![image](https://github.com/user-attachments/assets/41cc3951-1e0e-4adb-8f60-84157c09cb13)
+
+
+
+
+
+
+{
+    "persons": {
+        "P0": {
+            "total_reps": 8,
+            "avg_distance": 298.31,
+            "rep_times": [
+                0.0,
+                0.44,
+                2.28,
+                4.08,
+                5.84,
+                7.6,
+                9.36,
+                11.2
+            ],
+            "rep_intervals": [
+                0.44,
+                1.84,
+                1.8,
+                1.76,
+                1.76,
+                1.76,
+                1.84
+            ],
+            "avg_tempo": 1.6
+        },
+        "P1": {
+            "total_reps": 8,
+            "avg_distance": 300.31,
+            "rep_times": [
+                0.0,
+                0.48,
+                2.32,
+                4.04,
+                5.84,
+                7.64,
+                9.44,
+                11.2
+            ],
+            "rep_intervals": [
+                0.48,
+                1.84,
+                1.72,
+                1.8,
+                1.8,
+                1.8,
+                1.76
+            ],
+            "avg_tempo": 1.6
+        },
+        
+    "total_frames": 315
+}
 
 
 
